@@ -124,5 +124,23 @@
 		    <a href="https://github.com/DIYgod" target="_blank"><img src="img/icon-github.png"></a>
 		</div>
 	</footer>
+
+	
+	<script type="text/javascript">
+	var OriginTitile = document.title;
+	var titleTime;
+	document.addEventListener('visibilitychange', function() {
+	    if (document.hidden) {
+	        document.title = '看这里看这里' + OriginTitile;
+	        clearTimeout(titleTime);
+	    }
+	    else {
+	        document.title = '逗你玩的嘻嘻' + OriginTitile;
+	        titleTime = setTimeout(function() {
+	            document.title = OriginTitile;
+	        }, 2000);
+	    }
+	});
+	</script>
 </body>
 </html>
