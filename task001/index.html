@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Veah</title>
-	<link rel="shortcut icon"  href="img/favicon1.ico">
+	<title>Veah</title>	
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link id="aaa" rel="shortcut icon" type="image/x-icon" href="img/favicon1.ico">
 </head>
 <body>
 	<header id="header" class="header">
@@ -16,12 +16,12 @@
 				<ul>
 					<li><a href="index.html">首页</a></li>
 					<li><a href="blog.html">文章</a></li>
-					<li><a href="gallery.html">作品</a></li>
+					<li><a href="gallary.html">作品</a></li>
 					<li><a href="about.html">关于</a></li>
 				</ul>
 			</nav>
 		</div>
-		<a class="icon-github" href="https://github.com/veah"target="_blank"><img src="img/icon-github.png"></a>
+		<a class="icon-github" href="https://github.com/veah" target="_blank"><img src="img/icon-github.png"></a>
 	</header><!-- /header -->
 	<div class="index-center">
 		<div class="banner">
@@ -127,18 +127,28 @@
 
 	
 	<script type="text/javascript">
-	var OriginTitile = document.title;
-	var titleTime;
+	document.head = document.head || document.getElementsByTagName('head')[0];
+	var originTitile = document.title;
+	// var originLink = document.head.lastChild;
+	var originLink = document.getElementById('aaa');
+	var link = document.createElement('link');
+	link.rel = 'shortcut icon';
+	link.href = 'img/favicon2.ico';
+	var titleTime;	
 	document.addEventListener('visibilitychange', function() {
 	    if (document.hidden) {
-	        document.title = '看这里看这里' + OriginTitile;
+			document.head.removeChild(originLink);
+			document.head.appendChild(link);
+	        document.title = '看这里看这里';
 	        clearTimeout(titleTime);
 	    }
 	    else {
-	        document.title = '逗你玩的嘻嘻' + OriginTitile;
+			document.head.removeChild(link);
+			document.head.appendChild(originLink);
+	        document.title = '逗你玩的嘻嘻';
 	        titleTime = setTimeout(function() {
-	            document.title = OriginTitile;
-	        }, 2000);
+	            document.title = originTitile;
+	        }, 1000);
 	    }
 	});
 	</script>

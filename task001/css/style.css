@@ -26,7 +26,7 @@ body {
     position: relative;
     width: 100%;
     height: 80px;
-    background:#CDC5BF;
+    background: #CDC5BF;
 }
 
 .nav-wrap {
@@ -290,7 +290,7 @@ body {
   height: 40px;
   border: none;
   /*padding: 6px 12px;*/
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.42857143;
   color: #555;
   background-color: #fff;
