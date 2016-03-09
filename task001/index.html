@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Veah</title>	
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Veah</title>
 	<link id="aaa" rel="shortcut icon" type="image/x-icon" href="img/favicon1.ico">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<header id="header" class="header">
@@ -59,6 +59,7 @@
 				<li><a href="index.html">首页</a></li>
 				<li><a href="blog.html">文章</a></li>
 				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
 				<li><a href="about.html">关于</a></li>
 			</ul>
 		</nav>
@@ -128,13 +129,14 @@
 	
 	<script type="text/javascript">
 	document.head = document.head || document.getElementsByTagName('head')[0];
+
 	var originTitile = document.title;
-	// var originLink = document.head.lastChild;
-	var originLink = document.getElementById('aaa');
+	var titleTime;    
+	var originLink = document.head.getElementsByTagName('link')[0];
 	var link = document.createElement('link');
 	link.rel = 'shortcut icon';
-	link.href = 'img/favicon2.ico';
-	var titleTime;	
+	link.href = 'img/favicon2.ico'; //切换所用icon
+	
 	document.addEventListener('visibilitychange', function() {
 	    if (document.hidden) {
 			document.head.removeChild(originLink);
